@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section id="contant">
+    <div class="box__contant">
+        {% comment %} {% if categories %} {% endcomment %}
+            {% for coat in categories %}
+                <div class="box__cont">
+                    <div class="box__img">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <div class="box__text">
+                        <a href="{% url 'home:book_list_by_category' coat.slug %}">{{coat.name}}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% comment %} {% else %}
+        <div class="box__cont">
+            <div class="box__img">
+                <i class="fa fa-book"></i>
+            </div>
+            <div class="box__text">
+                <a href="/vive/Mashin.html">Mashinasozlik</a>
+            </div>
+        </div>
+        {% endif %} {% endcomment %}
+    </div>
+</section>
+
+{% endblock content %}

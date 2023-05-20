@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'Mashin.css' %}">
+    <title>Kutubxona</title>
+</head>
+
+<body>
+    <header id="header">
+        <a href="{% url 'home:index' %}"><div class="box">
+            <img src="{% static 'Ranch 3.png' %}" alt="">
+        </div>
+    </a>
+    </header>
+
+
+    <section id="search">
+        <form method="get" action="{% url 'home:book_list' %}">
+            <div class="header__search">
+                <input type="text" placeholder="Search.." name='search'>
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </section>
+
+
+    {% block content %}
+    
+    {% endblock content %}
+    <footer id="footer">
+        <div class="box__footer">
+            <div class="text">
+                <p>
+                    Tel: +998992170060
+                </p>
+                <p>
+                    Electron pochta: ranchuniversity@gmail.com
+                </p>
+                <p>
+                    Manzil: Urganch shaxar, Xonqa kocha 26 
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

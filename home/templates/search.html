@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="books">
+<div class="container">
+    {% for book in results %}
+        <div class="book__box">
+            <div class="book__img">
+                <i class="fa fa-book"></i>
+            </div>
+            <div class="book__text">
+                <h1>{{book.title}}</h1>
+                <a href="{% url 'home:download_pdf' book.id %}"><button>Yuklash</button></a>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="books">
+<div class="container">
+    {% for book in books %}
+        <div class="book__box">
+            <div class="book__img">
+                <i class="fa fa-book"></i>
+            </div>
+            <div class="book__text">
+                <h1>{{book.title}}</h1>
+                <a href="{% url 'home:download_pdf' book.id %}"><button>Yuklash</button></a>
+            </div>
+        </div>
+    {% endfor %}
+    {% comment %} <div class="book__box">
+        <div class="book__img">
+            <i class="fa fa-book"></i>
+        </div>
+        <div class="book__text">
+            <h1>Kitob Nomi</h1>
+            <button>Yuklash</button>
+        </div>
+    </div>
+    <div class="book__box">
+        <div class="book__img">
+            <i class="fa fa-book"></i>
+        </div>
+        <div class="book__text">
+            <h1>Kitob Nomi</h1>
+            <button>Yuklash</button>
+        </div>
+    </div> {% endcomment %}
+</div>
+</section>
+
+{% endblock content %}
